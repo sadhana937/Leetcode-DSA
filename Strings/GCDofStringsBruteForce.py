@@ -1,6 +1,6 @@
-# Greatest Common Divisor of Strings - Brute Force
-# Time complexity: O(n)
-# Space complexity: O(1)
+# Greatest Common Divisor of Str=ings - Brute Force
+# Time complexity: O(min(m,n).(m+n))
+# Space complexity: O(min(m,n)
 
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:
