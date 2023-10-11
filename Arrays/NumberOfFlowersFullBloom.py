@@ -9,27 +9,15 @@ class Solution:
         end = [flowers[i][1] for i in range(F)]
         end.sort()
         for i in range(P):
-            answer[i] = self.binarySearchRight(start, people[i]) - self.binarySearchLeft(end, people[i])
-
+            answer[i] = self.binarySearch(start, people[i], False) - self.binarySearch(end, people[i], True)
         return answer
     
-    def binarySearchRight(self, arr, value):
+    def binarySearch(self, arr, value, leftBias):
         low = 0
         high = len(arr)
         while low < high:
             mid = low + (high - low) // 2
-            if value < arr[mid]:
-                high = mid
-            else:
-                low = mid + 1
-        return low
-    
-    def binarySearchLeft(self, arr, value):
-        low = 0
-        high = len(arr)
-        while low < high:
-            mid = low + (high - low) // 2
-            if value <= arr[mid]:
+            if value < arr[mid] or (leftBias and value == arr[mid]):
                 high = mid
             else:
                 low = mid + 1
