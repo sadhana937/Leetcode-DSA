@@ -1,6 +1,6 @@
 # Time complexity: O(n)
 # Space complexity: O(n)
-
+# a ^ b = c --> a ^ c = b
 class Solution:
     def findArray(self, pref: List[int]) -> List[int]:
         n = len(pref)
