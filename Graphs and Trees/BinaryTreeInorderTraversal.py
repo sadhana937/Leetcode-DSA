@@ -12,12 +12,16 @@ class Solution1:
         stack = []
         if root is None:
             return []
-        cur = root.val
-        while cur is None:
-            stack.append(root.left.val)
-            result.append(root.val)
-            stack.append(root.right.val)
+        cur = root
+        while True:
+            while cur is not None:
+                stack.append(cur)
+                cur = cur.left
+            if not stack:
+                break
             cur = stack.pop()
+            result.append(cur.val)
+            cur = cur.right
         return result
 
 # Recurvise approach
