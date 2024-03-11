@@ -1,0 +1,13 @@
+class Solution:
+    def customSortString(self, order: str, s: str) -> str:
+        output = []
+        count = Counter(s)
+        for i in order:
+            if i in count.keys():
+                output.append(i * count[i])
+                count[i] = 0
+        
+        for i, val in count.items():
+            output.append(i * count[i])
+
+        return "".join(output)
