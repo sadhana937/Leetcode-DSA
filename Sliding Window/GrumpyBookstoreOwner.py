@@ -7,8 +7,11 @@ class Solution:
                 output += customers[i]
                 customers[i] = 0
 
-        max_unsatisfied = 0
-        for i in range(n):
-            max_unsatisfied = max(max_unsatisfied, sum(customers[i:i + minutes]))
+        current_unsatisfied = sum(customers[:minutes])
+        max_unsatisfied = current_unsatisfied
+
+        for i in range(minutes, n):
+            current_unsatisfied += customers[i] - customers[i - minutes]
+            max_unsatisfied = max(max_unsatisfied, current_unsatisfied)
         
         return max_unsatisfied + output
