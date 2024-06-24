@@ -1,3 +1,6 @@
+# Time complexity: O(n)
+# Space complexity: O(1)
+
 class Solution:
     def maxSatisfied(self, customers: List[int], grumpy: List[int], minutes: int) -> int:
         n = len(customers)
