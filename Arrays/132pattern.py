@@ -1,6 +1,3 @@
-# Time complexity: O(n)
-# Space complexity: O(1)
-
 class Solution:
     def find132pattern(self, nums: List[int]) -> bool:
         stack = []
